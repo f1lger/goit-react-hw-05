@@ -1,0 +1,23 @@
+/* .filmCont {
+  display: flex;
+  gap: 30px;
+} */
+.imageCont {
+  display: flex;
+  flex-direction: column;
+}
+.detailsCont {
+  display: flex;
+  gap: 30px;
+}
+.genresList {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  list-style-type: none;
+  justify-content: left;
+}
+.linkCont {
+  display: flex;
+  flex-direction: column;
+}

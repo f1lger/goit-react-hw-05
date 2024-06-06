@@ -1,0 +1,11 @@
+.navCont {
+  border-bottom: 2px solid #333;
+}
+.navLink {
+  display: inline-flex;
+  gap: 10px;
+  margin-right: 10px;
+}
+.isActive {
+  color: red;
+}
