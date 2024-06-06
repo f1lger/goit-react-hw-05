@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { seachFilmByReviews } from "../../api";
 import style from "./MovieReviews.module.css";
-import Loader from "../Loader";
+import Loader from "../Loader/Loader";
 
 export default function MovieReviews() {
   const [status, setStatus] = useState("");
@@ -17,7 +17,7 @@ export default function MovieReviews() {
         setStatus(data.results.length > 0 ? "success" : "rejected");
       } catch (error) {
         console.log(error);
-      } 
+      }
     };
     handleSearchReviews();
   }, [movieId]);

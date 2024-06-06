@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { seachFilmById } from "../../api";
 import style from "./MovieDetailsPage.module.css";
@@ -60,7 +60,9 @@ export default function MovieDetailsPage() {
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>
       </div>
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }

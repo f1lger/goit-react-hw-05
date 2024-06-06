@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { seachFilmByCast } from "../../api";
 import style from "./MovieCast.module.css";
-import Loader from "../Loader.jsx";
+import Loader from "../Loader/Loader.jsx";
 // import { useParams } from "react-router-dom";
 
 export default function MovieCast() {

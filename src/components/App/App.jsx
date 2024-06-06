@@ -1,26 +1,32 @@
 import "./App.module.css";
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import HomePage from "../../pages/HomePage.jsx";
-import MovieDetailsPage from "../../pages/MovieDetailsPage/MovieDetailsPage.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
-import MoviesPage from "../../pages/MoviesPage.jsx";
-import NotFoundPage from "../../pages/NotFoundPage.jsx";
-import MovieReviews from "../MovieReviews/MovieReviews.jsx";
-import MovieCast from "../MovieCast/MovieCast.jsx"
+
+const HomePage = lazy(() => import("../../pages/HomePage.jsx"));
+const MoviesPage = lazy(() => import("../../pages/MoviesPage.jsx"));
+const MovieDetailsPage = lazy(() =>
+  import("../../pages/MovieDetailsPage/MovieDetailsPage.jsx")
+);
+const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage.jsx"));
+const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews.jsx"));
+const MovieCast = lazy(() => import("../MovieCast/MovieCast.jsx"));
 
 export default function App() {
   return (
     <div>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" element={<MovieCast />} />
-          <Route path="reviews" element={<MovieReviews />} />
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+            <Route path="cast" element={<MovieCast />} />
+            <Route path="reviews" element={<MovieReviews />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }
