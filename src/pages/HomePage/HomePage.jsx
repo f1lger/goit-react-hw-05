@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import MoviesList from "../components/MovieList/MovieList";
-import { searchFilmByTrend } from "../api";
+import MoviesList from "../../components/MovieList/MovieList";
+import { searchFilmByTrend } from "../../api";
 export default function FilmLisk() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {

@@ -3,8 +3,8 @@ import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "../Navigation/Navigation.jsx";
 
-const HomePage = lazy(() => import("../../pages/HomePage.jsx"));
-const MoviesPage = lazy(() => import("../../pages/MoviesPage.jsx"));
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
+const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage.jsx"));
 const MovieDetailsPage = lazy(() =>
   import("../../pages/MovieDetailsPage/MovieDetailsPage.jsx")
 );
