@@ -7,6 +7,7 @@ export default function FilmLisk() {
     const handleSearchTrend = async () => {
       try {
         const data = await searchFilmByTrend();
+        console.log(data.results);
         setMovies(data.results);
       } catch (error) {
         console.log(error);

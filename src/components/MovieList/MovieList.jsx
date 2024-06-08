@@ -5,11 +5,26 @@ export default function MoviesList({movies}) {
   return (
     <div>
       <ul className={style.filmList}>
-        {movies.map(({ id, title }) => (
-          <li key={id}>
-            <Link to={`/movies/${id}`} state={location}>{title}</Link>
-          </li>
-        ))}
+        {movies.map(({ id, title, poster_path }) => {
+          if (!poster_path) {
+            return;
+          }
+          return (
+            <li key={id}>
+              <Link
+                to={`/movies/${id}`}
+                state={location}
+                className={style.movieCont}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+                  alt=""
+                />
+                {title}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -7,7 +7,15 @@ export default function MovieDetailsPage() {
   const backLinkRef = useRef(location.state ?? "/movies");
   const { movieId } = useParams();
   const [
-    { poster_path, title, vote_average, overview, release_date, genres = [] },
+    {
+      poster_path,
+      title,
+      vote_average,
+      overview,
+      release_date,
+      homepage,
+      genres = [],
+    },
     setFilmData,
   ] = useState([]);
 
@@ -54,6 +62,11 @@ export default function MovieDetailsPage() {
               <span>Sorry we do not have a release date on this film</span>
             )}
           </p>
+          {homepage && (
+            <a href={homepage} target="_blank" rel="noreferrer">
+              Watch the trailer
+            </a>
+          )}
         </div>
       </div>
       <div className={style.linkCont}>

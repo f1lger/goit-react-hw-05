@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { seachFilmByName } from "../api";
-import MoviesList from "../components/MovieList/MovieList";
-import Loader from "../components/Loader";
+import { seachFilmByName } from "../../api";
+import MoviesList from "../../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
 export default function MoviesPage() {
   const [status, setStatus] = useState(null);
   const [params, setParams] = useSearchParams();

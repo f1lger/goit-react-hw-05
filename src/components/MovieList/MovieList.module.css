@@ -1,5 +1,13 @@
 .filmList {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.movieCont {
+  width: 300px;
+  display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  align-items: center;
 }
