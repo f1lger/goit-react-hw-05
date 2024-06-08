@@ -1,3 +1,6 @@
+ul {
+  list-style-type: none;
+}
 .filmList {
   display: flex;
   justify-content: center;
