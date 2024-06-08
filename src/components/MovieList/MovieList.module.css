@@ -1,8 +1,6 @@
-ul {
-  list-style-type: none;
-}
 .filmList {
   display: flex;
+  list-style-type: none;
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 10px;
